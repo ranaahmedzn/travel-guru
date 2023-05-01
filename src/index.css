@@ -5,3 +5,6 @@
 .btn-main{
     @apply bg-[#F9A51A] py-3 px-8 text-base font-semibold rounded 
 }
+.btn-continue{
+    @apply flex items-center w-full border border-gray-300 rounded-full p-2 font-medium
+}
