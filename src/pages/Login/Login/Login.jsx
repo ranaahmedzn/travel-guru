@@ -5,7 +5,7 @@ import google from '../../../assets/logos/google.png'
 
 const Login = () => {
     return (
-        <div className='w-1/2 py-10 mx-auto'>
+        <div className='w-1/2 py-12 mx-auto'>
             <div className='w-4/5 mx-auto border-2 border-gray-300 py-6 px-8 rounded-lg'>
                 <h2 className='font-bold text-2xl mb-8'>Login</h2>
                 <form>
