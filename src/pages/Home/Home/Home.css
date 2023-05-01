@@ -3,10 +3,7 @@
     max-width: 220px;
     min-height: 320px;
     padding: 20px 15px;
-    /* border: 2px solid #F9A51A; */
     border-radius: 20px;
-    display: flex;
-    align-items: end;
 }
 .res-slide:hover{
     cursor: grab;
@@ -14,3 +11,8 @@
 .swiper-slide-active{
     border: 3px solid #F9A51A;
 }
+/* .res-slide .place-name{
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+} */

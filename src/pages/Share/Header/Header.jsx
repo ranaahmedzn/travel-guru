@@ -13,12 +13,12 @@ const Header = () => {
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-8 px-12">
                 <Link to='/' className="flex items-center">
                     {
-                        location.pathname === "/" ? <img src={logo1} className="h-12" alt="Travel Guru Logo" />
-                            : <img src={logo2} className="h-12" alt="Travel Guru Logo" />
+                        location.pathname.startsWith("/user") ? <img src={logo2} className="h-12" alt="Travel Guru Logo" />
+                            : <img src={logo1} className="h-12" alt="Travel Guru Logo" />
                     }
                 </Link>
                 {
-                    location.pathname === "/" && <form>
+                    !location.pathname.startsWith("/user") && <form>
                         <label htmlFor="search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -38,13 +38,13 @@ const Header = () => {
                             <Link to='/' className="block py-2 mr-4 text-[#F9A51A] md:p-0 ">Home</Link>
                         </li>
                         <li>
-                            <Link className={`block py-2 mr-4 md:p-0 ${location.pathname === "/" ? 'text-white' : 'text-gray-900'}`}>Destination</Link>
+                            <Link className={`block py-2 mr-4 md:p-0 ${location.pathname.startsWith("/user") ? 'text-gray-900' : 'text-white'}`}>Destination</Link>
                         </li>
                         <li>
-                            <Link className={`block py-2 mr-4 md:p-0 ${location.pathname === "/" ? 'text-white' : 'text-gray-900'}`}>Blog</Link>
+                            <Link className={`block py-2 mr-4 md:p-0 ${location.pathname.startsWith("/user") ? 'text-gray-900' : 'text-white'}`}>Blog</Link>
                         </li>
                         <li>
-                            <Link className={`block py-2 mr-4 md:p-0 ${location.pathname === "/" ? 'text-white' : 'text-gray-900'}`}>Contact</Link>
+                            <Link className={`block py-2 mr-4 md:p-0 ${location.pathname.startsWith("/user") ? 'text-gray-900' : 'text-white'}`}>Contact</Link>
                         </li>
                         <li>
                             <Link to='/user/login'>
