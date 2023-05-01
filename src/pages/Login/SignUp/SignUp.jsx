@@ -4,6 +4,8 @@ import fb from '../../../assets/logos/fb.png'
 import google from '../../../assets/logos/google.png'
 
 const SignUp = () => {
+    
+
     return (
         <div className='w-1/2 py-10 mx-auto'>
             <div className='w-4/5 mx-auto border-2 border-gray-300 py-6 px-8 rounded-lg'>
