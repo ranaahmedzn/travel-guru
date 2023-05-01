@@ -31,7 +31,7 @@ const SignUp = () => {
                         <label htmlFor="floating_password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm Password</label>
                     </div>
                     <button type="submit" className="btn-main w-full">Create an Account</button>
-                    <p className='text-base text-center mt-4'>Already have an account?<Link to='/login' className='ml-2 font-medium text-[#F9A51A] hover:underline'>Login</Link></p>
+                    <p className='text-base text-center mt-4'>Already have an account?<Link to='/user/login' className='ml-2 font-medium text-[#F9A51A] hover:underline'>Login</Link></p>
                 </form>
             </div>
             <div className='w-3/5 mx-auto'>
@@ -47,7 +47,7 @@ const SignUp = () => {
                     </button>
                     <button className='btn-continue'>
                         <img className='w-[32px]' src={google} alt="" />
-                        <span className='mx-auto'>Continue with Facebook</span>
+                        <span className='mx-auto'>Continue with Google</span>
                     </button>
                 </div>
             </div>

@@ -26,7 +26,7 @@ const Login = () => {
                         <span className='ml-2 text-sm font-medium text-[#F9A51A] hover:underline hover:cursor-pointer'>Forgot password?</span>
                     </div>
                     <button type="submit" className="btn-main w-full">Login</button>
-                    <p className='text-base text-center mt-4'>Don&rsquo;t have an account?<Link to='/signup' className='ml-2 font-medium text-[#F9A51A] hover:underline'>Create an Account</Link></p>
+                    <p className='text-base text-center mt-4'>Don&rsquo;t have an account?<Link to='/user/signup' className='ml-2 font-medium text-[#F9A51A] hover:underline'>Create an Account</Link></p>
                 </form>
             </div>
             <div className='w-3/5 mx-auto'>
