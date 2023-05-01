@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo1 from '../../../assets/logos/logo1.png'
 import logo2 from '../../../assets/logos/logo2.png'
 import { Link, useLocation } from 'react-router-dom';
 import { FaSearchLocation } from "react-icons/fa";
 import './Header.css'
+import { AuthContext } from '../../../providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Header = () => {
     const location = useLocation()
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => toast.success("Logout Successful", { position: toast.POSITION.TOP_CENTER }))
+            .catch(err => toast.error(err.message, { position: toast.POSITION.TOP_CENTER }))
+    }
 
     return (
         <nav>
@@ -46,10 +55,18 @@ const Header = () => {
                         <li>
                             <Link className={`block py-2 mr-4 md:p-0 ${location.pathname.startsWith("/user") ? 'text-gray-900' : 'text-white'}`}>Contact</Link>
                         </li>
+                        {
+                            user ? <li className={`text-lg font-bold ${location.pathname.startsWith("/user") ? 'text-gray-900' : 'text-white'}`}>
+                                {user.displayName}
+                            </li> : ""
+                        }
                         <li>
-                            <Link to='/user/login'>
-                                <button className='btn-main'>Login</button>
-                            </Link>
+                            {
+                                user ? <button onClick={handleLogOut} className='btn-main'>Logout</button>
+                                    : <Link to='/user/login'>
+                                        <button className='btn-main'>Login</button>
+                                    </Link>
+                            }
                         </li>
                     </ul>
                 </div>
