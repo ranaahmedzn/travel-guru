@@ -8,12 +8,10 @@ import { toast } from 'react-toastify';
 const SignUp = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [error, setError] = useState('')
-    const {createUser} = useContext(AuthContext)
+    const {createUser, googleSignIn} = useContext(AuthContext)
 
     const handleSignUp = (event) => {
         event.preventDefault()
-        setError('')
 
         const form = event.target;
         const firstName = form.first_name.value;
@@ -31,7 +29,7 @@ const SignUp = () => {
         })
         .catch(err => {
             console.log(err)
-            toast.error(error, {position: toast.POSITION.TOP_CENTER})
+            toast.error(err.message, {position: toast.POSITION.TOP_CENTER})
         })
     }
 
@@ -44,6 +42,19 @@ const SignUp = () => {
     const handlePassword = (e) => {
         const passwordInput = e.target.value;
         setPassword(passwordInput)
+    }
+
+    const handleGoogleLogin = () => {
+        googleSignIn()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            toast.success("Successfully login with Google!", {position: toast.POSITION.TOP_CENTER})
+        })
+        .catch(err => {
+            console.log(err)
+            toast.error(err.message, {position: toast.POSITION.TOP_CENTER})
+        })
     }
 
     return (
@@ -87,7 +98,7 @@ const SignUp = () => {
                         <img className='w-[32px]' src={fb} alt="" />
                         <span className='mx-auto'>Continue with Facebook</span>
                     </button>
-                    <button className='btn-continue'>
+                    <button onClick={handleGoogleLogin} className='btn-continue'>
                         <img className='w-[32px]' src={google} alt="" />
                         <span className='mx-auto'>Continue with Google</span>
                     </button>
